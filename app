@@ -24,6 +24,7 @@ function initialize {
     fi
 
     glib-compile-schemas /usr/share/glib-2.0/schemas/
+    gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true
 }
 
 case $1 in
