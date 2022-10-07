@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  vala:
+    image: vala
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    working_dir: /Vala
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - DISPLAY=host.docker.internal:0
+
+#gsettings  list-schemas
+#glib-compile-schemas /usr/share/glib-2.0/schemas/
+#find /usr -iname "*eog*xml*"
+#dbus-x11
+#docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=host.docker.internal:0 vala

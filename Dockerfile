@@ -6,15 +6,4 @@ WORKDIR /Vala
 # install app
 COPY . .
 #CMD meson --version
-#docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=host.docker.internal:0 vala
-#meson setup builddir
-#cd builddir
-#ninja
-#./demo
-#meson compile
-#other : meson build --prefix=/user
-#cd build
-#ninja
-#gsettings  list-schemas
-#glib-compile-schemas /usr/share/glib-2.0/schemas/
-#dbus-x11
+
