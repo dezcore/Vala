@@ -1,9 +1,13 @@
 public class Test.HeaderBar : Gtk.HeaderBar {
-    construct {
-        //set title
-        title = "Test";
-        //set subtitle
-        subtitle = "Let me help ya!";
+    public Gtk.Stack window_stack {get; construct;}
+
+    public HeaderBar(Gtk.Stack stack) {
+        Object(
+            window_stack : stack
+        );
+    }
+
+    construct {        
         show_close_button = true;
         //add button
         var add_button = new Gtk.Button.with_label("Add");
@@ -13,6 +17,9 @@ public class Test.HeaderBar : Gtk.HeaderBar {
         var menu_button = new Gtk.Button.from_icon_name("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
         menu_button.valign = Gtk.Align.CENTER;
         //add icon button -> submenu (popup menu)
+        var stack_switcher = new Gtk.StackSwitcher();
+        stack_switcher.stack = window_stack;
+        custom_title = stack_switcher;
         pack_end(menu_button);
     } 
 }

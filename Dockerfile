@@ -6,4 +6,6 @@ WORKDIR /Vala
 # install app
 COPY . .
 #CMD meson --version
+#sudo apt install gtk-3-examples
+#gtk3-widget-factory to start it
 

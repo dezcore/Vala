@@ -19,7 +19,20 @@ public class MyApp.Window : Gtk.ApplicationWindow {
             return before_destroy();
         });
 
-        var headerbar = new Test.HeaderBar();
+        var stack = new Gtk.Stack();
+        stack.expand = true; 
+
+        var outstanding = new Gtk.Grid();
+        var completed = new Gtk.Grid();
+        outstanding.add(new Gtk.Label("Outstanding Page"));
+        completed.add(new Gtk.Label("Completed Page"));
+
+        stack.add_titled(outstanding, "Outstanding", "Outstanding");
+        stack.add_titled(completed, "Completed", "Completed");
+
+        add(stack);
+
+        var headerbar = new Test.HeaderBar(stack);
         set_titlebar(headerbar);
         show_all();
     }
